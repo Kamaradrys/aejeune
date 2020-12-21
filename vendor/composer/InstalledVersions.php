@@ -14,12 +14,12 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => 'v8.4.3',
-    'version' => '8.4.3.0',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => '1825c29ac441350845e627f4b6b4ef9551d8fa2c',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -442,6 +442,15 @@ private static $installed = array (
         0 => '*',
       ),
     ),
+    'laravel/breeze' => 
+    array (
+      'pretty_version' => 'v1.0.0',
+      'version' => '1.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '0c0c962aa1a1a598f4a068fd40b36e2419ca76f4',
+    ),
     'laravel/framework' => 
     array (
       'pretty_version' => 'v8.16.1',
@@ -453,12 +462,12 @@ private static $installed = array (
     ),
     'laravel/laravel' => 
     array (
-      'pretty_version' => 'v8.4.3',
-      'version' => '8.4.3.0',
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => '1825c29ac441350845e627f4b6b4ef9551d8fa2c',
     ),
     'laravel/tinker' => 
     array (
@@ -764,8 +773,8 @@ private static $installed = array (
     array (
       'provided' => 
       array (
-        0 => '1.0',
-        1 => '1.0.0',
+        0 => '1.0.0',
+        1 => '1.0',
       ),
     ),
     'psr/simple-cache' => 
