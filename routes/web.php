@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CommunesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +36,11 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/agences/store', function () { return view('agence.store'); })->name('agence.store');
     Route::get('/agences/{agence}/edit', function () { return view('agence.edit'); })->name('agence.edit');
     Route::post('/agences/{agence}/update', function () { return view('agence.update'); })->name('agence.update');
-    Route::post('/agences/{agence}/delete', function () { return view('agence.delete'); })->name('agence.delete');
+    Route::post('/agences/{agence}/destroy', function () { return view('agence.destroy'); })->name('agence.destroy');
+     
+
+    Route::resource('commune', CommunesController::class);
+   
    
 
 

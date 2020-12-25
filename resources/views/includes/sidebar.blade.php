@@ -3,7 +3,7 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="{{ route('dashboard') }}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
@@ -57,6 +57,15 @@
 
 
 
+                            <!-- Liste Communes -->
+                            <a class="nav-link collapsed" href="{{ route('commune.index') }}"  >
+                                <div class="sb-nav-link-icon"><i class="fas fa-city"></i></div>
+                                Communes
+                            </a>
+                            <!--End  Liste Communes -->
+                            
+
+                            
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#UsersLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                                 Roles
@@ -67,6 +76,9 @@
                                     <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
                                 </nav>
                             </div>
+
+
+
                             
 
 
