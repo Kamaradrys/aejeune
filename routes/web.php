@@ -2,6 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CommunesController;
+use App\Http\Controllers\AgencesController;
+use App\Http\Controllers\VisiteursController;
+use App\Http\Controllers\UtilisateursController;
+use App\Models\Commune;
+use App\Models\Agence;
+use App\Models\Visiteur;
+use App\Models\Utilisateur;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -29,21 +37,21 @@ Route::get('/', function () {
 	// })->middleware(['auth'])->name('dashboard');
 
 
-Route::middleware(['auth'])->group(function () {
+    Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', function () { return view('dashboard'); })->name('dashboard');
-    Route::get('/agences', function () { return view('agence.index'); })->name('agence.index');
-    Route::get('/agences/create', function () { return view('agence.create'); })->name('agence.create');
-    Route::post('/agences/store', function () { return view('agence.store'); })->name('agence.store');
-    Route::get('/agences/{agence}/edit', function () { return view('agence.edit'); })->name('agence.edit');
-    Route::post('/agences/{agence}/update', function () { return view('agence.update'); })->name('agence.update');
-    Route::post('/agences/{agence}/destroy', function () { return view('agence.destroy'); })->name('agence.destroy');
      
-
     Route::resource('commune', CommunesController::class);
-   
+    Route::get('/commune/{id}/destroy', function ($id) { Commune::where('id',$id)->delete();return redirect()->back(); })->name('commune.delete');
    
 
+    Route::resource('agence', AgencesController::class);
+    Route::get('/agence/{id}/destroy', function ($id) { Agence::where('id',$id)->delete();return redirect()->back(); })->name('agence.delete');
 
+    Route::resource('visiteur', VisiteursController::class);
+    Route::get('/visiteur/{id}/destroy',function($id) { Visiteur::where('id',$id)->delete();return redirect()->back();})->name('visiteur.delete');
+
+    Route::resource('utilisateur', UtilisateursController::class);
+    Route::get('/utilisateurr/{id}/destroy',function($id) { Utilisateur::where('id',$id)->delete();return redirect()->back();})->name('utilisateur.delete');
 
 });
 

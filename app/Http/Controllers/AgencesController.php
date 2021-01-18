@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Agence;
 use App\Models\Commune;
 
-class CommunesController extends Controller
+class AgencesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +16,8 @@ class CommunesController extends Controller
      */
     public function index()
     {
-        $communes = Commune::all();
-        return view('commune.index', ['communes' => $communes]);
+        $agences = Agence::all();
+        return view('agence.index', ['agences' => $agences]);
     }
 
     /**
@@ -26,7 +27,8 @@ class CommunesController extends Controller
      */
     public function create()
     {
-        return view('commune.create');
+        $communes = Commune::pluck('name','id');
+        return view('agence.create', compact('communes'));
     }
 
     /**
@@ -37,10 +39,9 @@ class CommunesController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $this->validate($request, ['name'=> 'required']);
-        Commune::create(['name' => $data['name']]);
+        $data = $this->validate($request, ['name'=> 'required','id'=>'required']);
+        Agence::create(['name' => $data['name'],'id_commune'=>$data['id']]);
         return redirect()->back();
-       
     }
 
     /**
@@ -51,10 +52,7 @@ class CommunesController extends Controller
      */
     public function show($id)
     {
-        $commune = Commune::findOrFail($id);
-        $commune->show(['name'=>$request->$name]);
-        return redirect()->back();
-        /*return view('commune.show',['commune'=>Commune::findOrFail($id)]);*/
+        return view('agence.show',['agence'=>Agence::findOrFail($id)]);
     }
 
     /**
@@ -65,8 +63,9 @@ class CommunesController extends Controller
      */
     public function edit($id)
     {
-         $commune = Commune::findOrFail($id);
-        return view('commune.edit', compact('commune'));
+        $agence = Agence::findOrFail($id);
+        $communes =  Commune::pluck('name','id');
+        return view('agence.edit', compact('agence','communes'));
 
     }
 
@@ -79,8 +78,13 @@ class CommunesController extends Controller
      */
     public function update(Request $request, $id)
     {
-           $commune = Commune::findOrFail($id);
-        $commune->update(['name'=>$request->name,]);
+        
+        $agence = Agence::findOrFail($id);
+        $agence->update([
+            'name'=>$request->name,
+            'id_commune'=>$request->id,
+        ]);
+
         return redirect()->back();
     }
 
@@ -92,9 +96,7 @@ class CommunesController extends Controller
      */
     public function destroy($id)
     {
+         Agence::where('id',$id)->delete(); return redirect()->back();
 
-     Commune::where('id',$id)->delete();
-     return redirect()->back();
     }
-
 }
