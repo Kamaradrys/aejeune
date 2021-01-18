@@ -5,6 +5,7 @@ use App\Http\Controllers\CommunesController;
 use App\Http\Controllers\AgencesController;
 use App\Http\Controllers\VisiteursController;
 use App\Http\Controllers\UtilisateursController;
+use App\Http\Controllers\UsersController;
 use App\Models\Commune;
 use App\Models\Agence;
 use App\Models\Visiteur;
@@ -50,8 +51,9 @@ Route::get('/', function () {
     Route::resource('visiteur', VisiteursController::class);
     Route::get('/visiteur/{id}/destroy',function($id) { Visiteur::where('id',$id)->delete();return redirect()->back();})->name('visiteur.delete');
 
-    Route::resource('utilisateur', UtilisateursController::class);
-    Route::get('/utilisateurr/{id}/destroy',function($id) { Utilisateur::where('id',$id)->delete();return redirect()->back();})->name('utilisateur.delete');
+    Route::resource('users', UsersController::class);
+
+    // Route::get('/utilisateurr/{id}/destroy',function($id) { Utilisateur::where('id',$id)->delete();return redirect()->back();})->name('utilisateur.delete');
 
 });
 

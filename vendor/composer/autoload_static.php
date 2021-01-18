@@ -36,6 +36,7 @@ class ComposerStaticInit53d86d2fb9ad9b61a92c2eba5d0a3e12
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
         'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
+        '974ce3986b2f81344d3ce484b96c08e6' => __DIR__ . '/..' . '/mercuryseries/flashy/src/MercurySeries/Flashy/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -509,6 +510,10 @@ class ComposerStaticInit53d86d2fb9ad9b61a92c2eba5d0a3e12
             array (
                 0 => __DIR__ . '/..' . '/mockery/mockery/library',
             ),
+            'MercurySeries\\Flashy' => 
+            array (
+                0 => __DIR__ . '/..' . '/mercuryseries/flashy/src',
+            ),
         ),
     );
 
@@ -527,6 +532,7 @@ class ComposerStaticInit53d86d2fb9ad9b61a92c2eba5d0a3e12
         'App\\Http\\Controllers\\CommunesController' => __DIR__ . '/../..' . '/app/Http/Controllers/CommunesController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\ProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProductController.php',
+        'App\\Http\\Controllers\\UsersController' => __DIR__ . '/../..' . '/app/Http/Controllers/UsersController.php',
         'App\\Http\\Controllers\\VisiteursController' => __DIR__ . '/../..' . '/app/Http/Controllers/VisiteursController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -545,7 +551,6 @@ class ComposerStaticInit53d86d2fb9ad9b61a92c2eba5d0a3e12
         'App\\Models\\Role' => __DIR__ . '/../..' . '/app/Models/Role.php',
         'App\\Models\\Sexe' => __DIR__ . '/../..' . '/app/Models/Sexe.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
-        'App\\Models\\Utilisateur' => __DIR__ . '/../..' . '/app/Models/Utilisateur.php',
         'App\\Models\\Visiteur' => __DIR__ . '/../..' . '/app/Models/Visiteur.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -669,6 +674,7 @@ class ComposerStaticInit53d86d2fb9ad9b61a92c2eba5d0a3e12
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
         'Database\\Seeders\\RoleTableSeeder' => __DIR__ . '/../..' . '/database/seeders/RoleTableSeeder.php',
+        'Database\\Seeders\\RolesTableSeeder' => __DIR__ . '/../..' . '/database/seeders/RolesTableSeeder.php',
         'DeepCopy\\DeepCopy' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
         'DeepCopy\\Exception\\CloneException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/CloneException.php',
         'DeepCopy\\Exception\\PropertyException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/PropertyException.php',
@@ -2803,6 +2809,11 @@ class ComposerStaticInit53d86d2fb9ad9b61a92c2eba5d0a3e12
         'League\\MimeTypeDetection\\FinfoMimeTypeDetector' => __DIR__ . '/..' . '/league/mime-type-detection/src/FinfoMimeTypeDetector.php',
         'League\\MimeTypeDetection\\GeneratedExtensionToMimeTypeMap' => __DIR__ . '/..' . '/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php',
         'League\\MimeTypeDetection\\MimeTypeDetector' => __DIR__ . '/..' . '/league/mime-type-detection/src/MimeTypeDetector.php',
+        'MercurySeries\\Flashy\\Flashy' => __DIR__ . '/..' . '/mercuryseries/flashy/src/MercurySeries/Flashy/Flashy.php',
+        'MercurySeries\\Flashy\\FlashyNotifier' => __DIR__ . '/..' . '/mercuryseries/flashy/src/MercurySeries/Flashy/FlashyNotifier.php',
+        'MercurySeries\\Flashy\\FlashyServiceProvider' => __DIR__ . '/..' . '/mercuryseries/flashy/src/MercurySeries/Flashy/FlashyServiceProvider.php',
+        'MercurySeries\\Flashy\\LaravelSessionStore' => __DIR__ . '/..' . '/mercuryseries/flashy/src/MercurySeries/Flashy/LaravelSessionStore.php',
+        'MercurySeries\\Flashy\\SessionStore' => __DIR__ . '/..' . '/mercuryseries/flashy/src/MercurySeries/Flashy/SessionStore.php',
         'Mockery' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegration' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegrationAssertPostConditions' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegrationAssertPostConditions.php',

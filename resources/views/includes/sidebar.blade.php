@@ -37,9 +37,9 @@
                             <!--End  Liste Agences -->
 
                              <!-- Liste Utilisateurs -->
-                            <a class="nav-link collapsed" href="{{ route('utilisateur.index') }}"  >
+                            <a class="nav-link collapsed" href="{{ route('users.index') }}"  >
                                 <div class="sb-nav-link-icon"><i class="fas fa-city"></i></div>
-                                Utilisateurs
+                                Users
                             </a>
                             <!--End  Liste Utilisateurs -->
 
