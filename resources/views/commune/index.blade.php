@@ -3,9 +3,9 @@
 @section('content')
 
  <div class="container-fluid">
-                        <h1 class="mt-4">Agences</h1>
+                        <h1 class="mt-4">Communes</h1>
                         <ol class="breadcrumb mb-4">
-                            <a href="{{ route('agence.create') }}" class="ml-4 bg-dark text-white hover:bg-gray-700 text-decoration-none text-xs uppercase   border rounded font-semibold  px-4 py-2 "> <i class="fa fa-plus"></i> ajouter</a>
+                            <a href="{{ route('commune.create') }}" class="ml-4 bg-dark text-white hover:bg-gray-700 text-decoration-none text-xs uppercase   border rounded font-semibold  px-4 py-2 "> <i class="fa fa-plus"></i> ajouter</a>
 
                             {{-- <li class="breadcrumb-item active">Liste des Communes</li> --}}
 
@@ -19,7 +19,7 @@
                                 DataTable Example
                             </div>
                             <div class="card-body">
-                                @include('agence.table')
+                                @include('commune.table')
                             </div>
                         </div>
 
