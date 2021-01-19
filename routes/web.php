@@ -50,9 +50,6 @@ Route::get('/', function () {
     Route::resource('visiteur', VisiteursController::class);
     Route::get('/visiteur/{id}/destroy',function($id) { Visiteur::where('id',$id)->delete();return redirect()->back();})->name('visiteur.delete');
 
-    Route::resource('utilisateur', UtilisateursController::class);
-    Route::get('/utilisateurr/{id}/destroy',function($id) { Utilisateur::where('id',$id)->delete();return redirect()->back();})->name('utilisateur.delete');
-
 });
 
 

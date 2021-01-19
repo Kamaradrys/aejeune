@@ -32,6 +32,7 @@ class VisiteursRequest extends FormRequest
             'mail'=>'required|string|email',
             'objet_id'=>'required|integer',            
             'agence_id'=>'required|integer',            
+            'user_id'=>'required|integer',            
             ];
     }
 }

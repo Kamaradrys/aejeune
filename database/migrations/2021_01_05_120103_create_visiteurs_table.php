@@ -23,6 +23,7 @@ class CreateVisiteursTable extends Migration
             $table->string('mail');
             $table->unsignedBigInteger('objet_id');
             $table->unsignedBigInteger('agence_id');
+            $table->unsignedBigInteger('user_id');
             
             $table->timestamps();
         });

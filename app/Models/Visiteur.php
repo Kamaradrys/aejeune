@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Sexe;
 use App\Models\Objet;
+use App\Models\User;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -28,6 +29,10 @@ class Visiteur extends Model
     public function agence()
     {
         return $this->hasMany(Agence::class);
+    }
+    public function users()
+    {
+        return $this->belongsTo(User::class);
     }
     
 }

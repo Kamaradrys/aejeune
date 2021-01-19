@@ -9,6 +9,7 @@ use App\Models\Sexe;
 use App\Models\Objet;
 use App\Models\Agence;
 use App\Models\Visiteur;
+use App\Models\User;
 
 
 class VisiteursController extends Controller
