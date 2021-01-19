@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Auth;
 use Illuminate\Http\Request;
 use App\Http\Requests\VisiteursRequest;
 use App\Models\Sexe;
@@ -10,6 +11,7 @@ use App\Models\Objet;
 use App\Models\Agence;
 use App\Models\Visiteur;
 use App\Models\User;
+/*use Session;*/
 
 
 class VisiteursController extends Controller
@@ -23,8 +25,11 @@ class VisiteursController extends Controller
     {
 
         $visiteurs = Visiteur::all();
+
+        // {{-- dd($visiteurs); --}}
      
         return view('visiteur.index', ['visiteurs' => $visiteurs]);
+
     }
 
     /**
@@ -37,7 +42,8 @@ class VisiteursController extends Controller
         $optionsSexes = Sexe::pluck('name','id');
         $optionsObjets = Objet::pluck('name','id');
         $optionsAgences = Agence::pluck('name','id');
-        return view('visiteur.create', compact('optionsObjets','optionsSexes','optionsAgences') );
+        $user = Auth::user()->id;
+        return view('visiteur.create', compact('optionsObjets','optionsSexes','optionsAgences', 'user') );
 
     }
 
@@ -52,7 +58,7 @@ class VisiteursController extends Controller
 
       $data = $request->all();
       Visiteur::create($data);
-      return redirect()->back();
+      return redirect()->back()->with('success','Product successfully added.');
 
       
     }

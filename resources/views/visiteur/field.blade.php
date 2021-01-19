@@ -48,3 +48,6 @@
 </div>
 
 
+{!! Form::hidden('user_id', $user) !!}
+
+

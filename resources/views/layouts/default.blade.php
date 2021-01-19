@@ -9,16 +9,20 @@
         <meta name="author" content="" />
         <title>Dashboard - SB Admin</title>
         <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
+        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" />
+        <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet" />
         <link href="{{ asset('admin/dist/css/styles.css') }}" rel="stylesheet" />
         <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
     </head>
+
     <body class="sb-nav-fixed">
       @include('includes.topnav')
         <div id="layoutSidenav">
            @include('includes.sidebar')
             <div id="layoutSidenav_content">
                 <main>
+                    @include('includes.flash-message')
                     @yield('content')
                 </main>
                 @include('includes.footer')
@@ -27,6 +31,8 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="{{ asset('admin/dist/js/scripts.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('js/toastr.min.js') }}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
         <script src="{{ asset('admin/dist/assets/demo/chart-area-demo.js') }}"></script>
         <script src="{{ asset('admin/dist/assets/demo/chart-bar-demo.js') }}"></script>
@@ -35,3 +41,4 @@
         <script src="{{ asset('admin/dist/assets/demo/datatables-demo.js') }}"></script>
     </body>
 </html>
+

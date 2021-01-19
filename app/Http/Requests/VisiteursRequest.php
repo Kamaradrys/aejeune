@@ -28,11 +28,11 @@ class VisiteursRequest extends FormRequest
             'prenoms'=>'required|string',
             'sexe_id'=>'required|integer',
             'structure'=>'required|string',
-            'contacts'=>'required|integer|min:10',
+            'contacts'=>'required|integer',
             'mail'=>'required|string|email',
             'objet_id'=>'required|integer',            
-            'agence_id'=>'required|integer',            
-            'user_id'=>'required|integer',            
-            ];
+            'agence_id'=>'required|integer', 
+            'user_id'=>'required|integer', 
+        ];           
     }
 }

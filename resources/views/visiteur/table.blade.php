@@ -10,7 +10,7 @@
                                                 <th>Contacts</th>
                                                 <th>Emails</th>
                                                 <th>Objets</th>
-                                                {{-- <th>Agents enregistreur</th> --}}
+                                                <th>Agents enregistreur</th>
                                                 <th>Dates</th>
                                                 <th>Actions</th>
                                             </tr>
@@ -26,8 +26,8 @@
                                                 <td>{{ $visiteur->contacts }}</td>
                                                 <td>{{ $visiteur->mail }}</td>
                                                 <td>{{ $visiteur->objet->name }}</td>
-                                                {{-- <td>{{ $visiteur->users->name }}</td>
- --}}                                                <td>{{ date_format($visiteur->created_at, 'd/m/Y').' à '.date_format($visiteur->created_at, 'H:i') }}</td>
+                                                <td>{{ $visiteur->user->name }}</td>
+                                                <td>{{ date_format($visiteur->created_at, 'd/m/Y').' à '.date_format($visiteur->created_at, 'H:i') }}</td>
                                                 <td>
                                                 <a href="{{ route('visiteur.delete',$visiteur->id) }}" class="bg-red-700  px-2 rounded text-white py-2"> <i class="fa fa-trash"></i></a>
                                                 <a href="{{ route('visiteur.edit',$visiteur->id) }}" class="bg-gray-700  px-2 rounded text-white py-2"> <i class="fa fa-edit"></i></a>

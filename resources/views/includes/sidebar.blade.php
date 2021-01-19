@@ -36,6 +36,14 @@
                             </a>
                             <!--End  Liste Agences -->
 
+                 <!-- Liste Utilisateurs -->
+                            <a class="nav-link collapsed" href="{{ route('users.index') }}"  >
+                                <div class="sb-nav-link-icon"><i class="fas fa-city"></i></div>
+                                Users
+                            </a>
+                            <!--End  Liste Utilisateurs -->
+
+
                             <!-- Liste Visiteur -->
                             <a class="nav-link collapsed" href="{{ route('visiteur.index') }}"  >
                                 <div class="sb-nav-link-icon"><i class="fas fa-city"></i></div>
