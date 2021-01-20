@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CommunesController;
 use App\Http\Controllers\AgencesController;
 use App\Http\Controllers\VisiteursController;
@@ -9,7 +11,6 @@ use App\Http\Controllers\UsersController;
 use App\Models\Commune;
 use App\Models\Agence;
 use App\Models\Visiteur;
-use App\Models\Utilisateur;
 
 
 /*
@@ -54,9 +55,21 @@ Route::get('/', function () {
 
     Route::resource('users', UsersController::class);
 
+    /*Route pour la déconnexion de l'utilisateur */
     
+    Route::get('logout',function(Request $request) {
 
-});
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        Auth::logoutOtherDevices($request);
+
+        return redirect('/');})->name('user.logout');
+
+    });
 
 
 require __DIR__.'/auth.php';
