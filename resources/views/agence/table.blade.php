@@ -9,7 +9,7 @@
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
-                                        <tfoot>
+                                        {{-- <tfoot>
                                             <tr>
                                                 <th>Position</th>
                                                 <th>Name</th>
@@ -17,7 +17,7 @@
                                                 <th>Date création</th>
                                                 <th>Actions</th>
                                             </tr>
-                                        </tfoot>
+                                        </tfoot> --}}
                                         <tbody>
                                         @foreach($agences as $agence)
                                             <tr>

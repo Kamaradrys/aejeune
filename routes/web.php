@@ -11,6 +11,7 @@ use App\Http\Controllers\UsersController;
 use App\Models\Commune;
 use App\Models\Agence;
 use App\Models\Visiteur;
+/*use App\Models\User;*/
 
 
 /*
@@ -25,12 +26,9 @@ use App\Models\Visiteur;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth/login');
 });
 
-// Route::get('/', function () {
-//     return view('index');
-// });
 
 
 
@@ -55,7 +53,7 @@ Route::get('/', function () {
 
     Route::resource('users', UsersController::class);
 
-    /*Route pour la déconnexion de l'utilisateur */
+    //Route pour la déconnexion de l'utilisateur 
     
     Route::get('logout',function(Request $request) {
 
