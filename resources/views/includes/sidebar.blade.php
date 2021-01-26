@@ -66,7 +66,37 @@
                                 </a>
                                 <!--End  Liste Communes -->
                             @endcan
+
+                             @can('manage-site')
+                                <!-- Liste  Sexes -->
+                                <a class="nav-link collapsed" href="{{ route('sexe.index') }}"  >
+                                    <div class="sb-nav-link-icon"><i class="fas fa-city"></i></div>
+                                    Sexes
+                                </a>
+                                <!--End  Liste Sexes -->
+                            @endcan
                             
+
+                              @can('manage-site')
+                                <!-- Liste  Objets -->
+                                <a class="nav-link collapsed" href="{{ route('objet.index') }}"  >
+                                    <div class="sb-nav-link-icon"><i class="fas fa-city"></i></div>
+                                    Objets
+                                </a>
+                                <!--End  Liste Objets -->
+                            @endcan
+
+
+                            @can('manage-site')
+                                <!-- Liste  Roles -->
+                                <a class="nav-link collapsed" href="{{ route('role.index') }}"  >
+                                    <div class="sb-nav-link-icon"><i class="fas fa-city"></i></div>
+                                    Roles
+                                </a>
+                                <!--End  Liste Roles -->
+                            @endcan
+
+
 
                             @can('manage-site')
                             

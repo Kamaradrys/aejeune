@@ -12,16 +12,12 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
-        <?php 
-            $table = ["aej1","aej2","aej3","aej4","aej5","aej6"];
-            $val = $table[random_int(1, 6)];
-        ?>
+        <?php $i = random_int(0, 5);?>
     </head>
-    <body class="{{ $val }}">
+    <body style='background-image: url("../image/<?= $i?>.jpg")'>
         <div class="font-sans text-gray-900 antialiased">
             {{ $slot }}
         </div>

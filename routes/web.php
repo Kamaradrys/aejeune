@@ -6,11 +6,17 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CommunesController;
 use App\Http\Controllers\AgencesController;
 use App\Http\Controllers\VisiteursController;
+use App\Http\Controllers\SexesController;
+use App\Http\Controllers\ObjetsController;
+use App\Http\Controllers\RolesController;
 use App\Http\Controllers\UtilisateursController;
 use App\Http\Controllers\UsersController;
 use App\Models\Commune;
 use App\Models\Agence;
 use App\Models\Visiteur;
+use App\Models\Sexe;
+use App\Models\Role;
+use App\Models\Objet;
 /*use App\Models\User;*/
 
 
@@ -49,6 +55,15 @@ Route::get('/', function () {
 
     Route::resource('visiteur', VisiteursController::class);
     Route::get('/visiteur/{id}/destroy',function($id) { Visiteur::where('id',$id)->delete();return redirect()->back();})->name('visiteur.delete');
+
+    Route::resource('sexe', SexesController::class);
+    Route::get('/sexe/{id}/destroy',function($id) { Sexe::where('id',$id)->delete();return redirect()->back();})->name('sexe.delete');
+
+    Route::resource('role', RolesController::class);
+    Route::get('/role/{id}/destroy',function($id) { Role::where('id',$id)->delete();return redirect()->back();})->name('role.delete');
+
+    Route::resource('objet', ObjetsController::class);
+    Route::get('/objet/{id}/destroy',function($id) { Objet::where('id',$id)->delete();return redirect()->back();})->name('objet.delete');
 
 
     Route::resource('users', UsersController::class);
