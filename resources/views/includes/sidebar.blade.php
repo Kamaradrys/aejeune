@@ -28,39 +28,47 @@
                             </div> --}}
 
 
-
-                             <!-- Liste Agences -->
-                            <a class="nav-link collapsed" href="{{ route('agence.index') }}"  >
-                                <div class="sb-nav-link-icon"><i class="fas fa-city"></i></div>
-                                Agences
-                            </a>
-                            <!--End  Liste Agences -->
-
-                 <!-- Liste Utilisateurs -->
-                            <a class="nav-link collapsed" href="{{ route('users.index') }}"  >
-                                <div class="sb-nav-link-icon"><i class="fas fa-city"></i></div>
-                                Users
-                            </a>
-                            <!--End  Liste Utilisateurs -->
+                            @can('manage')
+                                 <!-- Liste Agences -->
+                                <a class="nav-link collapsed" href="{{ route('agence.index') }}"  >
+                                    <div class="sb-nav-link-icon"><i class="fas fa-city"></i></div>
+                                    Agences
+                                </a>
+                                <!--End  Liste Agences -->
+                            @endcan
 
 
-                            <!-- Liste Visiteur -->
-                            <a class="nav-link collapsed" href="{{ route('visiteur.index') }}"  >
-                                <div class="sb-nav-link-icon"><i class="fas fa-city"></i></div>
-                                Visiteurs
-                            </a>
-                            <!--End  Liste Visiteur -->
+                            @can('manage')   
+                                <!-- Liste Utilisateurs -->
+                                <a class="nav-link collapsed" href="{{ route('users.index') }}"  >
+                                    <div class="sb-nav-link-icon"><i class="fas fa-city"></i></div>
+                                    Users
+                                </a>
+                                <!--End  Liste Utilisateurs -->
+                            @endcan
 
 
+                           
+                                <!-- Liste Visiteur -->
+                                <a class="nav-link collapsed" href="{{ route('visiteur.index') }}"  >
+                                    <div class="sb-nav-link-icon"><i class="fas fa-city"></i></div>
+                                    Visiteurs
+                                </a>
+                                <!--End  Liste Visiteur -->
+                        
 
-                            <!-- Liste Communes -->
-                            <a class="nav-link collapsed" href="{{ route('commune.index') }}"  >
-                                <div class="sb-nav-link-icon"><i class="fas fa-city"></i></div>
-                                Communes
-                            </a>
-                            <!--End  Liste Communes -->
+
+                            @can('manage')
+                                <!-- Liste  Communes -->
+                                <a class="nav-link collapsed" href="{{ route('commune.index') }}"  >
+                                    <div class="sb-nav-link-icon"><i class="fas fa-city"></i></div>
+                                    Communes
+                                </a>
+                                <!--End  Liste Communes -->
+                            @endcan
                             
 
+                            @can('manage-site')
                             
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#UsersLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
@@ -72,8 +80,10 @@
                                     <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
                                 </nav>
                             </div>
+                            @endcan
 
 
+                             @can('manage-site')
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                                 Pages
@@ -105,20 +115,26 @@
                                     </div>
                                 </nav>
                             </div>
-                            <div class="sb-sidenav-menu-heading">Addons</div>
-                            <a class="nav-link" href="charts.html">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Charts
-                            </a>
+                            @endcan
+
+
+                             @can('manage-site')
+                                <div class="sb-sidenav-menu-heading">Addons</div>
+                                <a class="nav-link" href="charts.html">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                    Charts
+                                </a>
+
                             <a class="nav-link" href="tables.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Tables
                             </a>
+                             @endcan
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
-                        <div class="small">Logged in as:</div>
-                        Start Bootstrap
+                        <div class="small">Make by:</div>
+                        Fsociety
                     </div>
                 </nav>
-            </div>
+            </div>  
