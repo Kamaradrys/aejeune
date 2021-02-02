@@ -4,12 +4,12 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CommunesController;
+use App\Http\Controllers\EmpController;
 use App\Http\Controllers\AgencesController;
 use App\Http\Controllers\VisiteursController;
 use App\Http\Controllers\SexesController;
 use App\Http\Controllers\ObjetsController;
 use App\Http\Controllers\RolesController;
-use App\Http\Controllers\UtilisateursController;
 use App\Http\Controllers\UsersController;
 use App\Models\Commune;
 use App\Models\Agence;
@@ -55,6 +55,9 @@ Route::get('/', function () {
 
     Route::resource('visiteur', VisiteursController::class);
     Route::get('/visiteur/{id}/destroy',function($id) { Visiteur::where('id',$id)->delete();return redirect()->back();})->name('visiteur.delete');
+    /* Routes pour télécharger la liste des visiteurs en format pdf*/
+     Route::get('/get-all-visiteur', [VisiteursController::class,'getAllVisiteurs'])->name('get-all-visiteur');
+     Route::get('/download-pdf', [VisiteursController::class,'downloadPDF'])->name('download');
 
     Route::resource('sexe', SexesController::class);
     Route::get('/sexe/{id}/destroy',function($id) { Sexe::where('id',$id)->delete();return redirect()->back();})->name('sexe.delete');
@@ -64,7 +67,6 @@ Route::get('/', function () {
 
     Route::resource('objet', ObjetsController::class);
     Route::get('/objet/{id}/destroy',function($id) { Objet::where('id',$id)->delete();return redirect()->back();})->name('objet.delete');
-
 
     Route::resource('users', UsersController::class);
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
+use Auth;
 use App\Models\User;
 use App\Models\Role;
 use Session;
@@ -16,8 +17,9 @@ class UsersController extends Controller
      */
     public function index()
     {
+        $id = Auth::user()->id;
        $users = User::all();
-       return view('users.index', compact('users'));
+       return view('users.index', compact('users','id'));
 
     }
 
@@ -50,7 +52,8 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::findOrFail($id);
+        return view('users.show', compact('user'));
     }
 
     /**
@@ -96,5 +99,10 @@ class UsersController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function profile(User $user)
+    {
+       
+        
     }
 }

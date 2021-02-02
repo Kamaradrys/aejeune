@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Auth;
 use Illuminate\Http\Request;
 use App\Http\Requests\VisiteursRequest;
 use App\Models\Sexe;
@@ -11,6 +10,8 @@ use App\Models\Objet;
 use App\Models\Agence;
 use App\Models\Visiteur;
 use App\Models\User;
+use Auth;
+use PDF;
 /*use Session;*/
 
 
@@ -78,7 +79,7 @@ class VisiteursController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     ²x @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -125,6 +126,23 @@ class VisiteursController extends Controller
     public function destroy($id)
     {
         Visiteur::where('id',$id)->delete(); return redirect()->back();
+    }
+
+    public function getAllVisiteurs()
+    {
+        $visiteurs = Visiteur::all();
+        $user = Auth::user()->name;
+        return view('visiteur.show',compact('visiteurs','user'));
+    }
+
+        //code de downloadPDF en laravel
+    public function downloadPDF()
+    {
+        $visiteurs = Visiteur::all();
+        $user = Auth::user()->name;
+        $pdf = PDF::loadView('visiteur.show', compact('visiteurs','user'));
+        $pdf->setPaper('A4','landscape');
+        return $pdf->stream('visiteur.pdf');
     }
 }
 

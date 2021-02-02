@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Models\Role;
+use App\Models\Profile;
 /*use Session;*/
 
 class User extends Authenticatable
@@ -22,6 +23,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'profile_id',
     ];
 
     /**
@@ -48,6 +50,13 @@ class User extends Authenticatable
     {
         return $this->hasMany(Visiteur::class);
     }
+
+     public function profile()
+    {
+        return $this->hasOne(Profile::class);
+    }
+
+
 
 
 

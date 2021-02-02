@@ -17,6 +17,8 @@
                             <div class="card-header">
                                 <i class="fas fa-table mr-1"></i>
                                 DataTable Example
+                                <a class="float-right" href="{{ route('download') }}"><i class="fa fa-download fa-2x"></i>
+                                </a>
                             </div>
                             <div class="card-body">
                                 @include('visiteur.table')
